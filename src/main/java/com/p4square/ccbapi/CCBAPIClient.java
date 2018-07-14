@@ -165,6 +165,43 @@ public class CCBAPIClient implements CCBAPI {
         return makeRequest("update_individual", params, form, UpdateIndividualProfileResponse.class);
     }
 
+    @Override
+    public GetGroupProfilesResponse getGroupProfiles(GetGroupProfilesRequest request) throws IOException {
+        // Prepare the request.
+        String serviceName;
+        final Map<String, String> params = new HashMap<>();
+
+        if (request.getId() != 0) {
+            // Use group_profile_from_id (id)
+            serviceName = "group_profile_from_id";
+            params.put("id", String.valueOf(request.getId()));
+
+        } else {
+            // Use group_profiles
+            serviceName = "group_profiles";
+            if (request.getModifiedSince() != null) {
+                params.put("modified_since", request.getModifiedSince().toString());
+            }
+            if (request.getPage() != 0) {
+                params.put("page", String.valueOf(request.getPage()));
+            }
+            if (request.getPerPage() != 0) {
+                params.put("per_page", String.valueOf(request.getPerPage()));
+            }
+            if (request.getIncludeParticipants() != null) {
+                params.put("include_participants", request.getIncludeParticipants() ? "true" : "false");
+            }
+        }
+
+        // This option applies to all request types.
+        if (request.getIncludeImageUrl() != null) {
+            params.put("include_image_link", request.getIncludeImageUrl() ? "true" : "false");
+        }
+
+        // Send the request and parse the response.
+        return makeRequest(serviceName, params, null, GetGroupProfilesResponse.class);
+    }
+
     /**
      * Build the URI for a particular service call.
      *

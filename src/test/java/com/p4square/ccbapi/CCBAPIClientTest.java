@@ -283,6 +283,71 @@ public class CCBAPIClientTest {
        // Expect exception.
     }
 
+    @Test
+    public void testGetGroupProfilesById() throws Exception {
+        // Set expectation.
+        URI expectedURI = new URI("https://localhost:8080/api.php?srv=group_profile_from_id&id=750");
+        InputStream is = getClass().getResourceAsStream("model/ccb_group_profile_from_id_response.xml");
+        EasyMock.expect(mockHttpClient.sendPostRequest(expectedURI, null))
+                .andReturn(is);
+        EasyMock.replay(mockHttpClient);
+
+        // Test group_profile_from_id.
+        GetGroupProfilesRequest request = new GetGroupProfilesRequest().withGroupId(750);
+        GetGroupProfilesResponse response = client.getGroupProfiles(request);
+
+        // Verify results.
+        EasyMock.verify(mockHttpClient);
+        assertNull(response.getErrors());
+        assertEquals(1, response.getGroups().size());
+        assertEquals(750, response.getGroups().get(0).getId());
+    }
+
+    @Test
+    public void testGetAllGroupProfiles() throws Exception {
+        // Set expectation.
+        URI expectedURI = new URI("https://localhost:8080/api.php?srv=group_profiles");
+        InputStream is = getClass().getResourceAsStream("model/ccb_group_profile_from_id_response.xml");
+        EasyMock.expect(mockHttpClient.sendPostRequest(expectedURI, null))
+                .andReturn(is);
+        EasyMock.replay(mockHttpClient);
+
+        // Test group_profile_from_id.
+        GetGroupProfilesRequest request = new GetGroupProfilesRequest();
+        GetGroupProfilesResponse response = client.getGroupProfiles(request);
+
+        // Verify results.
+        EasyMock.verify(mockHttpClient);
+        assertNull(response.getErrors());
+        assertEquals(1, response.getGroups().size());
+        assertEquals(750, response.getGroups().get(0).getId());
+    }
+
+    @Test
+    public void testGetAllGroupProfilesWithOptions() throws Exception {
+        // Set expectation.
+        URI expectedURI = new URI("https://localhost:8080/api.php?srv=group_profiles&per_page=2&modified_since=2018-07-08&page=1&include_participants=false&include_image_link=true");
+        InputStream is = getClass().getResourceAsStream("model/ccb_group_profile_from_id_response.xml");
+        EasyMock.expect(mockHttpClient.sendPostRequest(expectedURI, null))
+                .andReturn(is);
+        EasyMock.replay(mockHttpClient);
+
+        // Test group_profile_from_id.
+        GetGroupProfilesRequest request = new GetGroupProfilesRequest()
+                .withIncludeParticipants(false)
+                .withIncludeImageUrl(true)
+                .withModifiedSince(LocalDate.parse("2018-07-08"))
+                .withPage(1)
+                .withPerPage(2);
+        GetGroupProfilesResponse response = client.getGroupProfiles(request);
+
+        // Verify results.
+        EasyMock.verify(mockHttpClient);
+        assertNull(response.getErrors());
+        assertEquals(1, response.getGroups().size());
+        assertEquals(750, response.getGroups().get(0).getId());
+    }
+
     /**
      * Simple extension of CCBAPIClient to swap out the HTTPInterface with a mock.
      */

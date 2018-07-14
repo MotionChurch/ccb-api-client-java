@@ -4,8 +4,8 @@ ccb-api-client-java is a Java library for accessing the
 [Church Community Builder][CCB] [API][APIDOCS].
 
 This library is not provided nor supported by Church Community Builder.
-It was build by Jesse Morgan for use in the [Foursquare GROW][GROW] project
-and released with the hopes of helping anyone else using the CCB API.
+It was build by Jesse Morgan for use in the [Foursquare GROW][GROW] and other
+projects and released with the hopes of helping anyone else using the CCB API.
 
 Only a few services are currently supported. The client currently supports:
 
@@ -15,6 +15,8 @@ Only a few services are currently supported. The client currently supports:
 * `individual_profile_from_micr`
 * `custom_field_labels`
 * `update_individual`
+* `group_profiles`
+* `group_profile_from_id`
 * List Lookup Tables
 
 Adding new services is relatively easy. Skip down to the Contributing section

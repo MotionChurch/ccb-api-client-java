@@ -13,7 +13,8 @@ public class Address {
         @XmlEnumValue("mailing") MAILING,
         @XmlEnumValue("home") HOME,
         @XmlEnumValue("work") WORK,
-        @XmlEnumValue("other") OTHER;
+        @XmlEnumValue("other") OTHER,
+        @XmlEnumValue("meeting") MEETING;
     }
 
     @XmlAttribute(name="type")

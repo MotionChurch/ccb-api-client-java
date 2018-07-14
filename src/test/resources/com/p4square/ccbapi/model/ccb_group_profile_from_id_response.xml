@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ccb_api>
+    <request>
+        <parameters>
+            <argument value="group_profile_from_id" name="srv"/>
+            <argument value="750" name="id"/>
+        </parameters>
+    </request>
+    <response>
+        <service>group_profile_from_id</service>
+        <service_action>execute</service_action>
+        <availability>public</availability>
+        <groups count="1">
+            <group id="750">
+                <name>Adamant by Lisa Bevere Book Study</name>
+                <description>What is the truth?&#13;
+                    &#13;
+                    This has become the defining question of our time. But while everyone has an opinion, truth, it seems, is getting harder and harder to find. Perhaps that's because we are searching for something when we should be looking for someone. &#13;
+                    &#13;
+                    Truth has a name.&#13;
+                    &#13;
+                    More ancient than time and more present than this moment, the truth is not a river that changes with the cultural currents, but a rock--immovable, invincible, unshakeable--and the cornerstone of all we are and ever dream to be.&#13;
+                    &#13;
+                    Theologically deep yet intimately accessible. Adamant will be an anchor for your soul in a raging sea of opinions, giving you a clear sense of direction in a wandering world.&#13;
+                    Every Other Tuesday Beginning in September 2018</description>
+                <image></image>
+                <campus id="1">Example Church</campus>
+                <main_leader id="26102">
+                    <first_name>Jane</first_name>
+                    <last_name>Doe</last_name>
+                    <full_name>Jane Doe</full_name>
+                    <email>jane.doe@example.com</email>
+                    <phones>
+                        <phone type="contact">+12068675309</phone>
+                    </phones>
+                </main_leader>
+                <leaders/>
+                <coach id="29">
+                    <first_name>John</first_name>
+                    <last_name>Doe</last_name>
+                    <full_name>John Doe</full_name>
+                    <email>john.doe@example.com</email>
+                    <phones type="contact">
+                        <phone></phone>
+                    </phones>
+                </coach>
+                <director id="33082">
+                    <first_name>Jeff</first_name>
+                    <last_name>Doe</last_name>
+                    <full_name>Jeff Doe</full_name>
+                    <email>jeff.doe@example.com</email>
+                    <phones type="contact">
+                        <phone></phone>
+                    </phones>
+                </director>
+                <participants/>
+                <group_type id="4">Community</group_type>
+                <department id="13">Adults</department>
+                <area id="18">Puyallup</area>
+                <calendar_feed>webcal://example.ccbchurch.com/group_calendar.ics?id=750&amp;tk=764EFA883DDA1E11DB47671C4A3BBD9E</calendar_feed>
+                <registration_forms/>
+                <current_members>1</current_members>
+                <group_capacity>Unlimited</group_capacity>
+                <addresses>
+                    <address type="meeting">
+                        <name></name>
+                        <street_address>1234 Example St</street_address>
+                        <city>Puyallup</city>
+                        <state>WA</state>
+                        <zip></zip>
+                        <longitude>-122.000000</longitude>
+                        <latitude>47.000000</latitude>
+                        <line_1>1234 Example St</line_1>
+                        <line_2>Puyallup, WA</line_2>
+                    </address>
+                </addresses>
+                <meeting_day id="4">Tuesday</meeting_day>
+                <meeting_time id="33">7:00 pm</meeting_time>
+                <childcare_provided>false</childcare_provided>
+                <interaction_type>Members Interact</interaction_type>
+                <membership_type>Invitation or Request Required</membership_type>
+                <notification>true</notification>
+                <user_defined_fields>
+                    <user_defined_field>
+                        <name>udf_1</name>
+                        <label>Gender</label>
+                        <selection id="2">Female only</selection>
+                        <admin_only>false</admin_only>
+                    </user_defined_field>
+                    <user_defined_field>
+                        <name>udf_2</name>
+                        <label>Marital status</label>
+                        <selection id="3">Marrieds &amp; Single</selection>
+                        <admin_only>false</admin_only>
+                    </user_defined_field>
+                    <user_defined_field>
+                        <name>udf_3</name>
+                        <label>Group Category</label>
+                        <selection id="1">Learning</selection>
+                        <admin_only>false</admin_only>
+                    </user_defined_field>
+                </user_defined_fields>
+                <listed>true</listed>
+                <public_search_listed>true</public_search_listed>
+                <inactive>false</inactive>
+                <creator id="12">Larry Cucumber</creator>
+                <modifier id="12">Larry Cucumber</modifier>
+                <created>2018-06-28 22:43:40</created>
+                <modified>2018-06-28 22:44:25</modified>
+            </group>
+        </groups>
+    </response>
+</ccb_api>

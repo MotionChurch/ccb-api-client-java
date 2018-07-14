@@ -59,4 +59,19 @@ public interface CCBAPI extends Closeable {
      * @throws IOException on failure.
      */
     UpdateIndividualProfileResponse updateIndividualProfile(UpdateIndividualProfileRequest request) throws IOException;
+
+    /**
+     * Retrieve one or more {@link GroupProfile}s.
+     *
+     * If {@link GetGroupProfilesRequest#withGroupId(int)} is set on the
+     * request, only the specified group will be returned.
+     * Otherwise, all groups are returned.
+     *
+     * The appropriate CCB API will be selected based on the options used.
+     *
+     * @param request A {@link GetGroupProfilesRequest}.
+     * @return A {@link GetGroupProfilesResponse} object on success, including when no groups are found.
+     * @throws IOException on failure.
+     */
+    GetGroupProfilesResponse getGroupProfiles(GetGroupProfilesRequest request) throws IOException;
 }
