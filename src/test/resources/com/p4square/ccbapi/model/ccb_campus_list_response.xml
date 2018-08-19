@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ccb_api>
+    <request>
+        <parameters>
+            <argument value="campus_list" name="srv"/>
+        </parameters>
+    </request>
+    <response>
+        <service>campus_list</service>
+        <service_action>execute</service_action>
+        <availability>public</availability>
+        <campuses count="1">
+            <campus id="1">
+                <name>Sample Church</name>
+                <active>1</active>
+                <creator id="0">System User</creator>
+                <modifier id="12">System User</modifier>
+                <created>2015-10-22 16:52:44</created>
+            </campus>
+        </campuses>
+    </response>
+</ccb_api>

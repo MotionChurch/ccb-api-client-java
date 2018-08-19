@@ -17,6 +17,7 @@ Only a few services are currently supported. The client currently supports:
 * `update_individual`
 * `group_profiles`
 * `group_profile_from_id`
+* `campus_list`
 * List Lookup Tables
 
 Adding new services is relatively easy. Skip down to the Contributing section
@@ -97,7 +98,7 @@ CCBAPIClient is thread-safe and manages its own pool of HTTP connections.
 
 ## License
 
-Copyright (c) 2016 Jesse Morgan
+Copyright (c) 2016-2018 Jesse Morgan
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 

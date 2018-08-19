@@ -151,6 +151,11 @@ public class CCBAPIClient implements CCBAPI {
     }
 
     @Override
+    public GetCampusListResponse getCampusList() throws IOException {
+        return makeRequest("campus_list", EMPTY_MAP, null, GetCampusListResponse.class);
+    }
+
+    @Override
     public UpdateIndividualProfileResponse updateIndividualProfile(UpdateIndividualProfileRequest request)
             throws IOException {
 

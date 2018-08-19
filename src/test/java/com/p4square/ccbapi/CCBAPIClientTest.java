@@ -129,6 +129,24 @@ public class CCBAPIClientTest {
         assertEquals("High School Graduation", response.getItems().get(0).getName());
     }
 
+    @Test
+    public void testGetCampusList() throws Exception {
+        // Set expectation.
+        URI expectedURI = new URI("https://localhost:8080/api.php?srv=campus_list");
+        InputStream is = getClass().getResourceAsStream("model/ccb_campus_list_response.xml");
+        EasyMock.expect(mockHttpClient.sendPostRequest(expectedURI, null))
+                .andReturn(is);
+        EasyMock.replay(mockHttpClient);
+
+        // Test significant_event_list.
+        GetCampusListResponse response = client.getCampusList();
+
+        // Verify results.
+        EasyMock.verify(mockHttpClient);
+        assertNull(response.getErrors());
+        assertEquals(1, response.getCampuses().size());
+    }
+
     @Test(expected = IllegalArgumentException.class)
     public void testGetLookupTableListWithNullType() throws Exception {
         // This should throw an IllegalArgumentException.

@@ -29,6 +29,14 @@ public interface CCBAPI extends Closeable {
     GetLookupTableResponse getLookupTable(GetLookupTableRequest request) throws IOException;
 
     /**
+     * Retrieve the list of campuses.
+     *
+     * @return A {@link GetCampusListResponse} containing the campus ids and names.
+     * @throws IOException on failure.
+     */
+    GetCampusListResponse getCampusList() throws IOException;
+
+    /**
      * Retrieve one or more {@link IndividualProfile}s.
      *
      * If any of the following properties are set on the request,
